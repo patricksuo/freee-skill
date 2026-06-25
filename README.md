@@ -56,3 +56,6 @@ python3 freee.py sync             # 拉主数据缓存
 ## 安全
 - access_token 6 小时过期，refresh_token 一次性、刷新即换新（`freee.py` 已处理存回）
 - 所有写操作默认 dry-run，需 `--commit` 才真写
+
+## License
+MIT — 见 [LICENSE](LICENSE)。
