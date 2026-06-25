@@ -1,0 +1,12 @@
+# Python
+__pycache__/
+*.py[cod]
+.DS_Store
+
+# 凭据与缓存绝不入库（实际位于 ~/.config/freee/，此处仅双保险）
+config.json
+token.json
+token.json.tmp
+cache/
+.config/
+*.token
