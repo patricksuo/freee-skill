@@ -21,7 +21,7 @@ description: 把自然语言的一笔账录进 freee 会計（单公司自用）
 
 ## 记一笔账的标准流程
 
-1. **主数据新鲜**：`~/.config/freee/cache/` 不存在、或涉及新科目/新取引先 → 先 `python3 ~/.claude/skills/freee/freee.py sync`。
+1. **确认本地科目缓存是最新的**：工具把 freee 的勘定科目/取引先/税区分/口座 抓到 `~/.config/freee/cache/` 存一份，用来把名称对成 id。若该目录不存在、或用户最近在 freee 新建过科目/取引先 → 先跑 `python3 ~/.claude/skills/freee/freee.py sync` 刷新；否则用现有缓存即可。
 2. **判定 deal / journal**（见上）。
 3. **名称→id 映射**：读 `cache/account_items.json`(勘定科目)、`cache/taxes.json`(税区分)、`cache/partners.json`(取引先)、`cache/walletables.json`(口座)，把「手数料」「役員借入金」「課税仕入10%」等映射成 `id`/`tax_code`。匹配不唯一或找不到 → **问用户**，不要猜。
 4. **拼 JSON** 写临时文件。
